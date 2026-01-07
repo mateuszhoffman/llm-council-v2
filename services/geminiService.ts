@@ -46,8 +46,8 @@ export const getOpenRouterModels = async (apiKey: string): Promise<OpenRouterMod
 };
 
 const getClient = () => {
-  const apiKey = currentConfig.apiKey || process.env.API_KEY;
-  if (!apiKey) throw new Error("Google API Key not found");
+  const apiKey = currentConfig.apiKey;
+  if (!apiKey) throw new Error("Google API Key not configured. Please open Settings to add your key.");
   return new GoogleGenAI({ apiKey });
 };
 

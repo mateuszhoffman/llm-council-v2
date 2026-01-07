@@ -98,15 +98,15 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     {config.provider === 'GOOGLE' ? (
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Google API Key (Optional)</label>
+                                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Google API Key</label>
                                 <input 
                                     type="password" 
-                                    placeholder="Use default (System Env)"
+                                    placeholder="Enter your Google API Key"
                                     value={config.apiKey || ''}
                                     onChange={(e) => setConfig({ ...config, apiKey: e.target.value })}
                                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500"
                                 />
-                                <p className="text-[10px] text-gray-500 mt-2">Leave blank to use the built-in demo key.</p>
+                                <p className="text-[10px] text-gray-500 mt-2">Required for Google models. Keys are stored locally in your browser.</p>
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Model ID</label>
